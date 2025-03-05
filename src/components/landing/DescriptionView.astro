@@ -68,7 +68,7 @@ import ChocoCapuchino from '../../assets/mipan/chococapuchinoface.png';
             </div>
         </div>
 
-        <div class="container_image m-3 min-h-lvh flex items-center justify-center">
+        <div id="download-pdf" class="container_image m-3 min-h-lvh flex items-center justify-center">
             <Image src={ChocoCapuchino} alt="demo" class="h-3/5 w-98 object-cover"/>
             <div class="text-centered text-center">
                 <p class="text-2xl font-bold">Pasteles</p>
@@ -76,13 +76,13 @@ import ChocoCapuchino from '../../assets/mipan/chococapuchinoface.png';
             </div>
         </div>
 
-        <div class="container_image m-3 min-h-lvh flex items-center justify-center">
-            <Image src={DonasGlass} alt="demo" class="h-3/5 w-98 object-cover"/>
-            <div class="text-centered text-center">
-                <p class="text-2xl font-bold">Panadería</p>
-                <p>Para compartir</p>
-            </div>
-        </div>
+        <div class="container_image m-3 min-h-lvh flex items-center justify-center" onclick="window.location.href='/panes'">
+           <Image src={DonasGlass} alt="demo" class="h-3/5 w-98 object-cover" />
+               <div class="text-centered text-center">
+                   <p class="text-2xl font-bold">Panadería</p>
+                   <p>Para compartir</p>
+               </div>
+           </div>
     </div>
     <div class="grid md:grid-cols-2 justify-center p-5 md:content-center" id="contact">
         <div class="w-full justify-items-center">
@@ -235,4 +235,12 @@ import ChocoCapuchino from '../../assets/mipan/chococapuchinoface.png';
 
         }
     </style>
+    <script>
+        document.getElementById('download-pdf')?.addEventListener('click', () => {
+            const link = document.createElement('a');
+            link.href = '../assets/mipan/pasteles.pdf';
+            link.download = 'pasteles.pdf';
+            link.click();
+        });
+    </script>
 </div>
