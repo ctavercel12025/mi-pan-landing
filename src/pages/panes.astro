@@ -19,14 +19,14 @@ import facebookLogo from "../assets/facebook.png";
                         <img src={facebookLogo.src} alt="Facebook" width="20" />
                     </a>
                 </div>
-                <!--<div class="hidden md:flex space-x-4">-->
-                <!--    <ul class="flex space-x-4 text-red-600">-->
-                <!--        <li><a href="/panes">Panadería</a></li>-->
-                <!--        <li><a href="#services">Pasteles</a></li>-->
-                <!--        <li><a href="#about_of">Acerca de</a></li>-->
-                <!--        <li><a href="#contact">Contacto</a></li>-->
-                <!--    </ul>-->
-                <!--</div>-->
+                <div class="hidden md:flex space-x-4">
+                    <ul class="flex space-x-4 text-red-600">
+                        <li><a href="/panes">Panader&iacute;a</a></li>
+                        <li><a href="../assets/mipan/pasteles.pdf" download="pasteles.pdf">Pasteles</a></li>
+                        <li><a href="/#about_of">Acerca de</a></li>
+                        <li><a href="/#contact">Contacto</a></li>
+                    </ul>
+                </div>
                 <div class="md:hidden">
                     <button id="menu-button" class="text-gray-500 focus:outline-none">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -152,4 +152,12 @@ import facebookLogo from "../assets/facebook.png";
         visibleProducts += 20; // Load 20 more products
         renderProducts(document.getElementById("panes"));
     });
+
+    function navigateToSection(event: any, sectionId: any) {
+        event.preventDefault();
+        window.location.href = `/${sectionId}`;
+        setTimeout(() => {
+            window.location.hash = sectionId;
+        }, 100);
+    }
 </script>
