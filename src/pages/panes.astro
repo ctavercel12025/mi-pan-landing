@@ -22,7 +22,7 @@ import facebookLogo from "../assets/facebook.png";
                 <div class="hidden md:flex space-x-4">
                     <ul class="flex space-x-4 text-red-600">
                         <li><a href="/panes">Panader&iacute;a</a></li>
-                        <li><a href="../assets/mipan/pasteles.pdf" download="pasteles.pdf">Pasteles</a></li>
+                        <li><div onclick="downloadPDF()">Pasteles</div></li>
                         <li><a href="/#about_of">Acerca de</a></li>
                         <li><a href="/#contact">Contacto</a></li>
                     </ul>
@@ -90,6 +90,7 @@ import facebookLogo from "../assets/facebook.png";
 <script>
     import { FilesService } from '../services/files';
     import Loading from '../assets/loader.gif';
+    import PastelesPDF from '../assets/mipan/pasteles.pdf';
 
     const fileService = new FilesService();
 
@@ -153,11 +154,12 @@ import facebookLogo from "../assets/facebook.png";
         renderProducts(document.getElementById("panes"));
     });
 
-    function navigateToSection(event: any, sectionId: any) {
-        event.preventDefault();
-        window.location.href = `/${sectionId}`;
-        setTimeout(() => {
-            window.location.hash = sectionId;
-        }, 100);
+    function downloadPDF() {
+        const link = document.createElement('a');
+        link.href = PastelesPDF;
+        link.download = 'pasteles.pdf';
+        link.click();
     }
+
+    document.addEventListener('DOMContentLoaded', downloadPDF);
 </script>
