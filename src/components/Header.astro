@@ -1,6 +1,7 @@
 ---
 import instagramLogo from "../assets/instagram.png";
 import facebookLogo from "../assets/facebook.png";
+import PastelesPDF from "*.pdf";
 ---
  
 <header class="headerFijo">
@@ -22,8 +23,8 @@ import facebookLogo from "../assets/facebook.png";
             <div class="hidden md:flex space-x-4">
                 <ul class="flex space-x-4 text-red-600">
                     <li><a href="/panes">Panadería</a></li>
-                    <li><a href="../assets/mipan/pasteles.pdf" download="pasteles.pdf">Pasteles</a></li>
-                    <li><a href="#about_of">Acerca de</a></li>
+                    <li><a id="downloadPDF" class="cursor-pointer">Pasteles</a></li>
+                        <li><a href="#about_of">Acerca de</a></li>
                     <li><a href="#contact">Contacto</a></li>
                 </ul>
             </div>
@@ -66,6 +67,16 @@ import facebookLogo from "../assets/facebook.png";
 </style>
 
 <script>
+
+    import PastelesPDF from '../assets/mipan/pasteles.pdf';
+
+    document.getElementById("downloadPDF")?.addEventListener("click", () => {
+        const link = document.createElement('a');
+        link.href = PastelesPDF;
+        link.download = 'pasteles.pdf';
+        link.click();
+    });
+
     document.addEventListener('DOMContentLoaded', () => {
         const menuButton: any = document.getElementById('menu-button');
         const mobileMenu: any = document.getElementById('mobile-menu');
