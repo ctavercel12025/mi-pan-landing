@@ -91,13 +91,13 @@ import Fotter from "../components/Fotter.astro";
 
     const fileService = new FilesService();
 
-    let panes = [];
+    let panes: any = [];
     let visibleProducts = 20; // Initially display 20 products
 
     function adjustImageSizes() {
-        const isSmallScreen = window.innerWidth <= 768;
-        const images = document.querySelectorAll('#panes img');
-        images.forEach((img) => {
+        const isSmallScreen = window.innerWidth <= 850;
+        const images: Array<any> = document.querySelectorAll('#panes img');
+        images.forEach((img: any) => {
             if (isSmallScreen) {
                 img.style.width = '100%';
                 img.classList.add('p-1');
@@ -114,11 +114,11 @@ import Fotter from "../components/Fotter.astro";
         if (!panesContainer) return;
 
         const response = await fileService.getCatalog();
-        panes = response.data.filter((pane) => pane.name !== "");
+        panes = response.data.filter((pane: any) => pane.name !== "");
         renderProducts(panesContainer);
     }
 
-    function renderProducts(container) {
+    function renderProducts(container: any) {
         const fragment = document.createDocumentFragment();
         panes.slice(0, visibleProducts).forEach((pane) => {
             const div = document.createElement("div");
@@ -135,7 +135,7 @@ import Fotter from "../components/Fotter.astro";
         adjustImageSizes();
 
         // Hide or show the "Ver más" button based on the number of visible products
-        const loadMoreButton = document.getElementById("load-more");
+        const loadMoreButton: any = document.getElementById("load-more");
         if (visibleProducts >= panes.length) {
             loadMoreButton.style.display = 'none';
         } else {
