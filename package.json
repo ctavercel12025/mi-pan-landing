@@ -16,6 +16,7 @@
     "axios": "^1.7.9",
     "blendy": "^0.0.1",
     "dotenv": "^16.4.7",
+    "nanostores": "^0.11.4",
     "tailwindcss": "^3.4.16"
   },
   "devDependencies": {
