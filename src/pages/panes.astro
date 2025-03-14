@@ -63,7 +63,6 @@ import facebookLogo from "../assets/facebook.png";
         if (!panesContainer) return;
 
         const response = await fileService.getCatalog();
-        console.log(response.data);
         panes = response.data.filter((pane: any) => pane.name !== "");
         renderProducts(panesContainer);
     }

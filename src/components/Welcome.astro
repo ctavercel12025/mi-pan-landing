@@ -23,11 +23,11 @@ import Panes from "../pages/panes.astro";
 
 	isOpen.subscribe(isOpen => {
 		if(isOpen){
-			document.getElementById('welcome').style.display = 'none';
-			document.getElementById('pann').style.display = 'block';
+			document.getElementById('welcome')!.style.display = 'none';
+			document.getElementById('pann')!.style.display = 'block';
 		}else{
-			document.getElementById('welcome').style.display = 'block';
-			document.getElementById('pann').style.display = 'none';
+			document.getElementById('welcome')!.style.display = 'block';
+			document.getElementById('pann')!.style.display = 'none';
 		}
 	});
 </script>

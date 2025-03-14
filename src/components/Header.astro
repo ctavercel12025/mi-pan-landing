@@ -76,16 +76,19 @@ import PastelesPDF from "*.pdf";
         link.click();
     });
 
-    document.addEventListener('DOMContentLoaded', () => {
-        const menuButton = document.getElementById('menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
+    // document.addEventListener('DOMContentLoaded', () => {
+    //     const menuButton = document.getElementById('menu-button');
+    //     const mobileMenu = document.getElementById('mobile-menu');
+    //
+    //     if (menuButton && mobileMenu) {
+    //         menuButton.addEventListener('click', () => {
+    //             mobileMenu.classList.toggle('hidden');
+    //         });
+    //     }
+    // });
 
-        if (menuButton && mobileMenu) {
-            menuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-        }
-    });
+    document.getElementById("menu-button")?.addEventListener("click", () => {})
+
     document.getElementById("panesbtn")?.addEventListener("click", (event) => {
         if (!isOpen.get()) isOpen.set(true);
         else isOpen.set(false);
