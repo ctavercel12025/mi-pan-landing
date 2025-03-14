@@ -4,10 +4,30 @@ import background from '../assets/background.svg';
 import Fotter from './Fotter.astro';
 import Header from './Header.astro';
 import Description from "./landing/DescriptionView.astro"
+import Panes from "../pages/panes.astro";
 ---
 
 <div>
 	<Header/>
-	<Description/>
+	<div id="welcome">
+		<Description/>
+	</div>
+	<div id="pann">
+		<Panes/>
+	</div>
 	<Fotter/>
 </div>
+
+<script>
+	import {isOpen} from '../store/store';
+
+	isOpen.subscribe(isOpen => {
+		if(isOpen){
+			document.getElementById('welcome').style.display = 'none';
+			document.getElementById('pann').style.display = 'block';
+		}else{
+			document.getElementById('welcome').style.display = 'block';
+			document.getElementById('pann').style.display = 'none';
+		}
+	});
+</script>
