@@ -21,8 +21,14 @@ import Panes from "../pages/panes.astro";
 <script>
 	import {isOpen} from '../store/store';
 
-	isOpen.subscribe(isOpen => {
-		if(isOpen){
+	isOpen.subscribe(open => {
+		const path = window.location.href.includes('panes');
+		console.log(path);
+		if(open){
+			document.getElementById('welcome')!.style.display = 'none';
+			document.getElementById('pann')!.style.display = 'block';
+		}else if(path){
+			isOpen.set(true);
 			document.getElementById('welcome')!.style.display = 'none';
 			document.getElementById('pann')!.style.display = 'block';
 		}else{

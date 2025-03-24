@@ -106,6 +106,7 @@ import PastelesPDF from "*.pdf";
     document.getElementById("menu-button")?.addEventListener("click", () => {})
 
     document.getElementById("panesbtn")?.addEventListener("click", (event) => {
+        console.log('click aca en panes', isOpen.get());
         if (!isOpen.get()){
             isOpen.set(true);
             window.scrollTo(0, 0);
@@ -114,17 +115,18 @@ import PastelesPDF from "*.pdf";
             isOpen.set(false);
             window.scrollTo(0, 0);
         }
+        window.location.href = "/#panes";
     });
 
     document.getElementById("panesbtn-mobile")?.addEventListener("click", () => {
-        if (!isOpen.get()){
+        if (!isOpen.get()){            
             isOpen.set(true);
             window.scrollTo(0, 0);
-        }
-        else{
+        }else{
             isOpen.set(false);
             window.scrollTo(0, 0);
         }
+        window.location.href = "/#panes";
     });
 
     document.getElementById("downloadPDF-mobile")?.addEventListener("click", () => {

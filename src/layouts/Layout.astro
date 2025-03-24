@@ -1,11 +1,18 @@
+---
+import Favicon from "../assets/favicon.svg";
+const title = "Mi Pan";
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml"
+			href={Favicon.src}
+		/>
 		<meta name="generator" content={Astro.generator} />
-		<title>Mi Pan</title>
+		<title>{title}</title>
 	</head>
 	<body>
 		<slot />
