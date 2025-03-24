@@ -1,10 +1,13 @@
 ---
 import Header from "../components/Header.astro";
 import Fotter from "../components/Fotter.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<div id="privacy" class="justify-center p-5 md:content-center w-full pt-16">
+<Layout>
+
     <Header/>
+    <div id="privacy" class="justify-center p-5 md:content-center w-full pt-16">
     <div class="text-justify">
         <p><strong>Aviso de Privacidad</strong></p>
         <br/>
@@ -46,14 +49,15 @@ import Fotter from "../components/Fotter.astro";
         <p>OTUSORES S.A de C.V.<br>
             privacidad@grupomipan.com<br>
             Tel. 55-24-51-01-01</p>
-        <br/>
-        <p>Al utilizar nuestros servicios, usted acepta los t&eacute;rminos descritos en este aviso de privacidad.</p>
-        <br/>
-        <div class="text-center">
+            <br/>
+            <p>Al utilizar nuestros servicios, usted acepta los t&eacute;rminos descritos en este aviso de privacidad.</p>
+            <br/>
+            <div class="text-center">
             <p><strong>ATENTAMENTE</strong></p>
             <p>_______________________________________<br>
                 AREA JURIDICA GRUPO MI PAN</p>
+            </div>
         </div>
     </div>
-</div>
 <Fotter/>
+</Layout>

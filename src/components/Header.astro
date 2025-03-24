@@ -87,17 +87,44 @@ import PastelesPDF from "*.pdf";
     //     }
     // });
 
+    //mobile-menu
+    // obtenemos la ruta actual
+    const path = window.location.pathname;
+    console.log(path);
+    document.addEventListener("DOMContentLoaded", () => {
+        if(path.includes('privacy')){
+            console.log('entro');
+            document.getElementById("menu-button")?.addEventListener("click", () => {
+            const mobileMenu = document.getElementById('mobile-menu');
+                if (mobileMenu) {
+                    mobileMenu.classList.toggle('hidden');
+                }
+            });
+        }
+    });
+
     document.getElementById("menu-button")?.addEventListener("click", () => {})
 
     document.getElementById("panesbtn")?.addEventListener("click", (event) => {
-        console.log("aqui");
-        if (!isOpen.get()) isOpen.set(true);
-        else isOpen.set(false);
+        if (!isOpen.get()){
+            isOpen.set(true);
+            window.scrollTo(0, 0);
+        }
+        else{
+            isOpen.set(false);
+            window.scrollTo(0, 0);
+        }
     });
 
     document.getElementById("panesbtn-mobile")?.addEventListener("click", () => {
-        if (!isOpen.get()) isOpen.set(true);
-        else isOpen.set(false);
+        if (!isOpen.get()){
+            isOpen.set(true);
+            window.scrollTo(0, 0);
+        }
+        else{
+            isOpen.set(false);
+            window.scrollTo(0, 0);
+        }
     });
 
     document.getElementById("downloadPDF-mobile")?.addEventListener("click", () => {
@@ -105,6 +132,12 @@ import PastelesPDF from "*.pdf";
         link.href = PastelesPDF;
         link.download = 'pasteles.pdf';
         link.click();
+    });
+
+    document.querySelectorAll('a[href="/#about_of"], a[href="/#contact"]').forEach((link) => {
+        link.addEventListener("click", () => {
+            if (isOpen.get()) isOpen.set(false);
+        });
     });
 
     // cuando le de click en el id inicio se va a la pagina principal
