@@ -24,8 +24,7 @@ import facebookLogo from "../assets/facebook.png";
             });
         });
     </script>
-    <div id="panes" class="grid md:grid-cols-4 md:gap-4 min-h-svh"></div>
-
+    <div id="panes" class="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-4 min-h-svh"></div>
     <div id="load-more-container" class="flex justify-center mt-4">
         <button id="load-more" style="color: #E32826" class="font-bold py-2 px-4 rounded">Ver m&aacute;s</button>
     </div>
@@ -71,12 +70,12 @@ import facebookLogo from "../assets/facebook.png";
         const fragment = document.createDocumentFragment();
         panes.slice(0, visibleProducts).forEach((pane, index) => {
             const div = document.createElement("div");
-            div.classList.add("flex", "flex-col", "items-center", "justify-center", "text-center", "w-full", "md:w-auto", "pt-10", "md:pt-0", "pb-10", "md:pb-0");
+            div.classList.add("flex", "flex-col", "items-center", "justify-center", "text-center", "w-full", "pt-10", "pb-10");
             div.innerHTML = `
                 <img async src="${Loading.src}" data-src="${pane.image}" alt="${pane.name}" class="mb-2 w-1/2 md:w-2/3" onload="this.src=this.getAttribute('data-src')" />
-                <p class="text-xl">${pane.name}</p>
+                <p class="md:text-xl text-md">${pane.name}</p>
             `;
-            fragment.appendChild(div);
+                    fragment.appendChild(div);
         });
         container.innerHTML = '';
         container.appendChild(fragment);
